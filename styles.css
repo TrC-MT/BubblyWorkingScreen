@@ -1,0 +1,13 @@
+*{
+    transition: 5s;
+}
+body{
+    margin: 0px;
+    background-color: darkblue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', serif;
+}
+marquee{
+    color: lawngreen;
+    font-size: 180px;
+    font-weight: bolder;
+}
