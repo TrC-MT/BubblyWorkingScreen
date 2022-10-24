@@ -24,6 +24,7 @@ function Interval(){
     var interval = Math.floor(DecInterval)
     setInterval(Change, interval)
     setInterval(makeBackgroundDifferentColor, interval/2)
+    setInterval(Flipper, interval * 2)
     var intervalToChange = (max + min + interval)*1.5
     setTimeout(Interval, intervalToChange)
 }
@@ -41,4 +42,24 @@ function Change(){
         document.getElementById(`${i}`).style.fontSize = String(FS) + 'px'
         document.getElementById(`${i}`).setAttribute('scrollamount', ScrollAmount)
     }
+}
+
+function Flipper(){
+    let dec_Selected = Math.random() * (10 - 1) + 1
+    let selected = Math.floor(dec_Selected)
+    console.log(selected)
+    if(selected >= 5){
+        makeBackgroundDifferentColor()
+    }
+    else{
+        document.getElementById(`${selected}`).style.transform = 'rotateX(0deg)'
+        setTimeout(FlipStart, 1000, selected)
+    }
+}
+function FlipStart(selected){
+    document.getElementById(`${selected}`).style.transform = 'rotateX(180deg)'
+    setTimeout(FlipEnd, 1000, selected)
+}
+function FlipEnd(selected){
+    document.getElementById(`${selected}`).style.transform = 'rotateX(360deg)'
 }
