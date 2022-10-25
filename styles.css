@@ -8,6 +8,13 @@ body{
     width: 100%;
 }
 
+button{
+    background-color: darkblue;
+    color: #DBB216;
+}
+#On{
+    display: none;
+}
 
 header{
     width: 100%;

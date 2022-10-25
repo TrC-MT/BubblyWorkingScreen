@@ -1,14 +1,18 @@
-function getRandomColorNumber() {
-    return Math.random() * 255;
+var num_of_collapses = 0
+function Collapse(){
+    num_of_collapses += 1
+    if((num_of_collapses % 2) == 0){
+        document.getElementById('On').style.display = "flex"
+        document.getElementsByTagName('header')[0].style.display = 'none'
+    }
+    else{
+        document.getElementById('On').style.display = "none"
+        document.getElementsByTagName('header')[0].style.display = 'flex'
+    }
 }
 
-function makeBackgroundDifferentColor() {
-    const red = getRandomColorNumber();
-    const green = getRandomColorNumber();
-    const blue = getRandomColorNumber();
-    const color = `rgba(${red}, ${green}, ${blue}, 1)`
-    window.document.body.style.background = color;
-}
+
+
 
 
 window.setTimeout(
@@ -27,6 +31,18 @@ function Interval(){
     setInterval(Flipper, interval * 2)
     var intervalToChange = (max_interval + min_interval + interval)*1.5
     setTimeout(Interval, intervalToChange)
+}
+
+function getRandomColorNumber() {
+    return Math.random() * 255;
+}
+
+function makeBackgroundDifferentColor() {
+    const red = getRandomColorNumber();
+    const green = getRandomColorNumber();
+    const blue = getRandomColorNumber();
+    const color = `rgba(${red}, ${green}, ${blue}, 1)`
+    window.document.body.style.background = color;
 }
 
 function Change(){
