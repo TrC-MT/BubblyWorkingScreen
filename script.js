@@ -46,9 +46,12 @@ function Change(){
 }
 
 function Flipper(){
-    let dec_Selected = Math.random() * (20 - 1) + 1
+    // const chance = (4/max) * 100
+    // const max = 4/(chance/100)
+    const chance = Number(document.getElementById('ChanceOfFlipping').value)
+    const max_flip = (4/(chance/100))
+    let dec_Selected = Math.random() * (max_flip - 1) + 1 //10max = 40%chance, 20max = 20%chance,
     let selected = Math.floor(dec_Selected)
-    console.log(selected)
     if(selected >= 5){
         makeBackgroundDifferentColor()
     }
