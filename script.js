@@ -48,7 +48,9 @@ function Change(){
         const green = getRandomColorNumber();
         const blue = getRandomColorNumber();
         const Color = `rgb(${red}, ${green}, ${blue})`
-        var ScrollAmount = Math.random() * (60 - 18) + 18; //This is the speed at which the marquee goes across the page
+        const max_scrollamount = Number(document.getElementById('MaxScrollAmount').value)
+        const min_scrollamount = Number(document.getElementById('MinScrollAmount').value)
+        var ScrollAmount = Math.random() * (max_scrollamount - min_scrollamount) + min_scrollamount; //This is the speed at which the marquee goes across the page
         const max_size = Number(document.getElementById('MaxSizeInput').value)
         const min_size = Number(document.getElementById('MinSizeInput').value)
         var FS = Math.random() * (max_size - min_size) + min_size
