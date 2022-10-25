@@ -18,8 +18,8 @@ window.setTimeout(
 );
 
 function Interval(){
-    const max_interval = Number(document.getElementById('MaxIntervalInput').value)
-    const min_interval = Number(document.getElementById('MinIntervalInput').value)
+    const max_interval = Number(document.getElementById('MaxIntervalInput').value) * 1000 
+    const min_interval = Number(document.getElementById('MinIntervalInput').value) * 1000
     var DecInterval = Math.random() * (max_interval - min_interval) + min_interval;
     var interval = Math.floor(DecInterval)
     setInterval(Change, interval)
