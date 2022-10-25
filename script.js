@@ -18,14 +18,14 @@ window.setTimeout(
 );
 
 function Interval(){
-    const max = 6000
-    const min = 2000
-    var DecInterval = Math.random() * (max - min) + min;
+    const max_interval = Number(document.getElementById('MaxIntervalInput').value)
+    const min_interval = Number(document.getElementById('MinIntervalInput').value)
+    var DecInterval = Math.random() * (max_interval - min_interval) + min_interval;
     var interval = Math.floor(DecInterval)
     setInterval(Change, interval)
     setInterval(makeBackgroundDifferentColor, interval/2)
     setInterval(Flipper, interval * 2)
-    var intervalToChange = (max + min + interval)*1.5
+    var intervalToChange = (max_interval + min_interval + interval)*1.5
     setTimeout(Interval, intervalToChange)
 }
 
@@ -36,16 +36,17 @@ function Change(){
         const blue = getRandomColorNumber();
         const Color = `rgb(${red}, ${green}, ${blue})`
         var ScrollAmount = Math.random() * (60 - 18) + 18;
-        var FS = Math.random() * (300 - 100) + 100
-
+        const max_size = Number(document.getElementById('MaxSizeInput').value)
+        const min_size = Number(document.getElementById('MinSizeInput').value)
+        var FS = Math.random() * (max_size - min_size) + min_size
         document.getElementById(`${i}`).style.color = Color
-        document.getElementById(`${i}`).style.fontSize = String(FS) + 'px'
+        document.getElementById(`${i}`).style.fontSize = String(FS) + 'em'
         document.getElementById(`${i}`).setAttribute('scrollamount', ScrollAmount)
     }
 }
 
 function Flipper(){
-    let dec_Selected = Math.random() * (10 - 1) + 1
+    let dec_Selected = Math.random() * (20 - 1) + 1
     let selected = Math.floor(dec_Selected)
     console.log(selected)
     if(selected >= 5){
