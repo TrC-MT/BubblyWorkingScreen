@@ -1,5 +1,5 @@
 *{
-    transition: 5s;
+    transition: 5s; /* This is how fast/slow the transitions take to show. It's a decent sized value so as to not make the screen flash. */
 }
 body{
     margin: 0px;
@@ -13,7 +13,7 @@ button{
     color: #DBB216;
 }
 #On{
-    display: none;
+    display: none; /* This makes it so the element with the id of On not show on the page. */
 }
 
 header{
