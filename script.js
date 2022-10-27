@@ -76,7 +76,7 @@ function Change(){
         //___________________________________
         document.getElementById(`${i}`).innerHTML = String(document.getElementById('TextInput').value)
         //___
-        document.getElementById(`${i}`).setAttribute('behaviour', String(document.getElementById('BehaviourInput').value)) 
+        document.getElementById(`${i}`).setAttribute('behavior', String(document.getElementById('behaviorInput').value)) 
     }
 }
 
