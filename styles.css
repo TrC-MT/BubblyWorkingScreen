@@ -27,7 +27,7 @@ header{
 }
 h1{
     margin-left: .5%;
-    font-size: 3em;
+    font-size: 4em;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #DB1816;
 }
@@ -43,20 +43,23 @@ h4{
     width: 15%;
     margin: 0px;
     color: #9C1210;
-    font-family: monospace;
+    font-family:'Courier New', Courier, monospace;
 }
 input{
     width: 15%;
     background-color: #DBB216;
     border-color: #1623DB;
 }
+
 #secondInputs{
-    margin-left: -5%;
+    margin-left: -10%;
 }
 #switchHeading{
     text-align: center;
 }
-
+.secondHeading{
+    width: 20%;
+}
 
 main{
     width: 100%;
