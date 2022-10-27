@@ -15,15 +15,12 @@
         <button onclick="Collapse()">Hide Menu</button>
         <div class="scriptControls">
             <div class="instructions">
-                <h5>MaxInterval (s)</h5>
-                <h5>MinInterval (s)</h5>
-                <h5>MaxSize (em)</h5>
-                <h5>MinSize (em)</h5>
-                <h5>MaxSpeed</h5>
-                <h5>MinSpeed</h5>
-
-                <h5>ChanceOfRotation (%)</h5>
-                <h5>Shadow (On/Off)</h5>
+                <h4>MaxInterval (s)</h4>
+                <h4>MinInterval (s)</h4>
+                <h4>MaxSize (em)</h4>
+                <h4>MinSize (em)</h4>
+                <h4>MaxSpeed</h4>
+                <h4>MinSpeed</h4>
             </div>
             <div class="inputs">
                 <input id="MaxIntervalInput" type="text" value="6">
@@ -32,7 +29,12 @@
                 <input id="MinSizeInput" type="text" value="5">
                 <input id="MaxScrollAmount" type="text" value="60">
                 <input id="MinScrollAmount" type="text" value="18">
-
+            </div>
+            <div class="instructions">
+                <h4>ChanceOfRotation (%)</h4>
+                <h4 id="switchHeading">Shadow (On/Off)</h4>
+            </div>
+            <div class="inputs" id="secondInputs">
                 <input id="ChanceOfFlipping" type="text" value="20">
                 <label class="switch">
                     <input onclick="ToggleShadow()" type="checkbox">
