@@ -57,6 +57,7 @@ function Change(){
         document.getElementById(`${i}`).style.color = Color
         document.getElementById(`${i}`).style.fontSize = String(FS) + 'em' //I use em because it's responsive
         document.getElementById(`${i}`).setAttribute('scrollamount', ScrollAmount)
+        document.getElementById(`${i}`).style.textShadow = `7px 5px 20px rgb(${green}, ${blue}, ${red})` //Yes, the red, green, and blue are mixed up.
     }
 }
 

@@ -57,4 +57,5 @@ marquee{
     color: lawngreen;
     font-size: 7em;
     font-weight: bolder;
+    text-shadow: 7px 5px 20px #0f0f0f;
 }
