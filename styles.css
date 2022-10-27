@@ -8,7 +8,7 @@ body{
 }
 
 button{
-    background-color: darkblue;
+    background-color: #1623DB;
     color: #DBB216;
     width:fit-content;
 }
@@ -44,7 +44,6 @@ h4{
     margin: 0px;
     color: #9C1210;
     font-family: monospace;
-    border: 1px solid black; /* Debugging */
 }
 input{
     width: 15%;
@@ -53,6 +52,9 @@ input{
 }
 #secondInputs{
     margin-left: -5%;
+}
+#switchHeading{
+    text-align: center;
 }
 
 
@@ -92,7 +94,7 @@ marquee{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #1623DB;
     transition: .4s;
   }
   
@@ -103,16 +105,16 @@ marquee{
     width: 16px;
     left: 2px;
     bottom: 2px;
-    background-color: white;
+    background-color: #9C1210;
     transition: .4s;
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #DBB216;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #DBB216;
   }
   
   input:checked + .slider:before {
