@@ -45,7 +45,6 @@ h4{
     margin: 0px;
     color: #9C1210;
     font-family:'Courier New', Courier, monospace;
-    border: 1px solid black;
 }
 input{
     width: 15%;
@@ -108,6 +107,7 @@ marquee{
     width: 16px;
     left: 2px;
     bottom: 2px;
+    border-radius: 5px;
     background-color: #9C1210;
     transition: .4s;
   }
