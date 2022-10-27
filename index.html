@@ -34,7 +34,7 @@
                 <h4 class="secondHeading">ChanceOfRotation (%)</h4>
                 <h4 class="secondHeading" id="ShadowHeading">Shadow (Off/On)</h4>
                 <h4 class="secondHeading">Text</h4>
-                <h4 class="secondHeading" id="behaviorHeading">behavior (altr/scrl)</h4>
+                <h4 class="secondHeading" id="behaviorHeading">Behavior (altr/scrl)</h4>
             </div>
             <div class="inputs">
                 <input id="ChanceOfFlipping" type="text" value="20">
@@ -43,7 +43,10 @@
                     <span class="slider"></span>
                 </label>
                 <input type="text" id="TextInput" value="Working...">
-                <input type="text" id="behaviorInput" value="alternate">
+                <label class="switch">
+                    <input onclick="BehaviorSwitch()" type="checkbox">
+                    <span class="slider"></span>
+                </label>
             </div>
         </div>
     </header>

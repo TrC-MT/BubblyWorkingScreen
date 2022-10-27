@@ -49,6 +49,10 @@ var num_of_toggle_shadows = -1
 function ToggleShadow(){
     num_of_toggle_shadows += 1
 }
+var num_of_behaviors = -1
+function BehaviorSwitch(){
+    num_of_behaviors += 1
+}
 function Change(){
     for(let i = 1; i < document.getElementsByTagName('marquee').length +1; i++){
         const red = getRandomColorNumber();
@@ -76,7 +80,12 @@ function Change(){
         //___________________________________
         document.getElementById(`${i}`).innerHTML = String(document.getElementById('TextInput').value)
         //___
-        document.getElementById(`${i}`).setAttribute('behavior', String(document.getElementById('behaviorInput').value)) 
+        if(num_of_behaviors%2 == 0){
+            document.getElementById(`${i}`).setAttribute('behavior', 'scroll')
+        }
+        else{
+            document.getElementById(`${i}`).setAttribute('behavior', 'alternate')
+        }
     }
 }
 
