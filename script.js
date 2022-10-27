@@ -55,21 +55,26 @@ function Change(){
         const green = getRandomColorNumber();
         const blue = getRandomColorNumber();
         const Color = `rgb(${red}, ${green}, ${blue})`
+        document.getElementById(`${i}`).style.color = Color
+        //___________________________
         const max_scrollamount = Number(document.getElementById('MaxScrollAmount').value)
         const min_scrollamount = Number(document.getElementById('MinScrollAmount').value)
         var ScrollAmount = Math.random() * (max_scrollamount - min_scrollamount) + min_scrollamount; //This is the speed at which the marquee goes across the page
+        document.getElementById(`${i}`).setAttribute('scrollamount', ScrollAmount)
+        //______________________________
         const max_size = Number(document.getElementById('MaxSizeInput').value)
         const min_size = Number(document.getElementById('MinSizeInput').value)
         var FS = Math.random() * (max_size - min_size) + min_size
-        document.getElementById(`${i}`).style.color = Color
         document.getElementById(`${i}`).style.fontSize = String(FS) + 'em' //I use em because it's responsive
-        document.getElementById(`${i}`).setAttribute('scrollamount', ScrollAmount)
+        //________________________________
         if(num_of_toggle_shadows %2 == 0){
             document.getElementById(`${i}`).style.textShadow = `7px 5px 20px rgb(${green}, ${blue}, ${red})` //Yes, the red, green, and blue are mixed up.
         }
         else{
             document.getElementById(`${i}`).style.textShadow = `none`
         }
+        //___________________________________
+        document.getElementById(`${i}`).innerHTML = String(document.getElementById('TextInput').value)
     }
 }
 
