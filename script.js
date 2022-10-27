@@ -1,16 +1,3 @@
-var num_of_collapses = 0
-function Collapse(){
-    num_of_collapses += 1
-    if((num_of_collapses % 2) == 0){
-        document.getElementById('On').style.display = "flex" //flex is just a value that I know will show on the page. It doesn't have any child elements though.
-        document.getElementsByTagName('header')[0].style.display = 'none'
-    }
-    else{
-        document.getElementById('On').style.display = "none"
-        document.getElementsByTagName('header')[0].style.display = 'flex'
-    }
-}
-
 
 window.setTimeout(
     function(){
@@ -34,6 +21,22 @@ function getRandomColorNumber() {
     return Math.random() * 255;
 }
 
+//----------------------------------
+var num_of_collapses = 0
+function Collapse(){
+    num_of_collapses += 1
+    if((num_of_collapses % 2) == 0){
+        document.getElementById('On').style.display = "flex" //flex is just a value that I know will show on the page. It doesn't have any child elements though.
+        document.getElementsByTagName('header')[0].style.display = 'none'
+    }
+    else{
+        document.getElementById('On').style.display = "none"
+        document.getElementsByTagName('header')[0].style.display = 'flex'
+    }
+}
+
+//-----------------------------------
+
 function makeBackgroundDifferentColor() {
     const red = getRandomColorNumber();
     const green = getRandomColorNumber();
@@ -42,6 +45,10 @@ function makeBackgroundDifferentColor() {
     window.document.body.style.background = color;
 }
 
+var num_of_toggle_shadows = -1
+function ToggleShadow(){
+    num_of_toggle_shadows += 1
+}
 function Change(){
     for(let i = 1; i < document.getElementsByTagName('marquee').length +1; i++){
         const red = getRandomColorNumber();
@@ -57,7 +64,12 @@ function Change(){
         document.getElementById(`${i}`).style.color = Color
         document.getElementById(`${i}`).style.fontSize = String(FS) + 'em' //I use em because it's responsive
         document.getElementById(`${i}`).setAttribute('scrollamount', ScrollAmount)
-        document.getElementById(`${i}`).style.textShadow = `7px 5px 20px rgb(${green}, ${blue}, ${red})` //Yes, the red, green, and blue are mixed up.
+        if(num_of_toggle_shadows %2 == 0){
+            document.getElementById(`${i}`).style.textShadow = `7px 5px 20px rgb(${green}, ${blue}, ${red})` //Yes, the red, green, and blue are mixed up.
+        }
+        else{
+            document.getElementById(`${i}`).style.textShadow = `none`
+        }
     }
 }
 
@@ -83,3 +95,4 @@ function FlipStart(selected){
 function FlipEnd(selected){
     document.getElementById(`${selected}`).style.transform = 'rotateX(360deg)' //This flips the text back to right side up
 }
+//--------------------------
