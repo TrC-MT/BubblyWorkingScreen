@@ -38,12 +38,14 @@ h1{
 .instructions, .inputs{
     display: flex;
     justify-content: space-evenly;
+    width:100%;
 }
 h4{
     width: 15%;
     margin: 0px;
     color: #9C1210;
     font-family:'Courier New', Courier, monospace;
+    border: 1px solid black;
 }
 input{
     width: 15%;
@@ -51,12 +53,13 @@ input{
     border-color: #1623DB;
 }
 
-#secondInputs{
-    margin-left: -8%;
+#secondInstructions{
+    justify-content: space-around;
 }
 .secondHeading{
-    width: 20%;
+    width: fit-content;
 }
+
 
 main{
     width: 100%;

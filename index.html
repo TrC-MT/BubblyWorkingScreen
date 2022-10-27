@@ -30,18 +30,20 @@
                 <input id="MaxScrollAmount" type="text" value="60">
                 <input id="MinScrollAmount" type="text" value="18">
             </div>
-            <div class="instructions">
+            <div class="instructions" id="secondInstructions">
                 <h4 class="secondHeading">ChanceOfRotation (%)</h4>
-                <h4 class="secondHeading">Shadow (Off/On)</h4>
+                <h4 class="secondHeading" id="ShadowHeading">Shadow (Off/On)</h4>
                 <h4 class="secondHeading">Text</h4>
+                <h4 class="secondHeading" id="BehaviourHeading">Behaviour (altr/scrl)</h4>
             </div>
-            <div class="inputs" id="secondInputs">
+            <div class="inputs">
                 <input id="ChanceOfFlipping" type="text" value="20">
                 <label class="switch">
                     <input onclick="ToggleShadow()" type="checkbox">
                     <span class="slider"></span>
                 </label>
                 <input type="text" id="TextInput" value="Working...">
+                <input type="text" id="BehaviourInput" value="alternate">
             </div>
         </div>
     </header>
