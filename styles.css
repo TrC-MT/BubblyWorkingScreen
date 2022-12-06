@@ -12,6 +12,9 @@ button{
     color: #DBB216;
     width:fit-content;
 }
+#audioControl{
+    transition: 1s;
+}
 #On{
     display: none; /* This makes it so the element with the id of On not show on the page. */
 }
@@ -27,7 +30,7 @@ header{
 }
 h1{
     margin-left: .5%;
-    font-size: 4em;
+    font-size: 3em;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #DB1816;
 }
@@ -71,6 +74,9 @@ marquee{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+audio{
+    width: 10%;
+}
 /* ---------- https://www.w3schools.com/howto/howto_css_switch.asp ----------- */
 
 /* The switch - the box around the slider */

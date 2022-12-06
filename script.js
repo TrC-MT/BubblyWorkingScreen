@@ -112,3 +112,26 @@ function FlipEnd(selected){
     document.getElementById(`${selected}`).style.transform = 'rotateX(360deg)' //This flips the text back to right side up
 }
 //--------------------------
+
+audio_tag = document.getElementsByTagName('audio')[0]
+audio_button = document.getElementById('audioControl')
+let s = 0; // s standing for sound
+function AudioControl(){
+    if(s == 0){
+        audio_tag.pause()
+        s = 1
+        audio_button.style.backgroundColor = '#1623DB';
+        audio_button.style.color = '#DBB216'
+        audio_button.innerHTML = 'Play music'
+    }
+    else if(s == 1){
+        audio_tag.play()
+        s = 0
+        audio_button.style.backgroundColor = '#DBB216';
+        audio_button.style.color = '#1623DB'
+        audio_button.innerHTML = 'Pause music'
+    }
+    else{
+        console.log('the s variable for the audio tag is not functioning.')
+    }
+}
