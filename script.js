@@ -69,7 +69,7 @@ function Change(){
         const max_size = Number(document.getElementById('MaxSizeInput').value)
         const min_size = Number(document.getElementById('MinSizeInput').value)
         var FS = Math.random() * (max_size - min_size) + min_size
-        document.getElementById(`${i}`).style.fontSize = String(FS) + 'em' //I use em because it's responsive
+        document.getElementById(`${i}`).style.fontSize = String(FS) + 'vw';
         //________________________________
         if(num_of_toggle_shadows %2 == 0){
             document.getElementById(`${i}`).style.textShadow = `7px 5px 20px rgb(${green}, ${blue}, ${red})` //Yes, the red, green, and blue are mixed up.

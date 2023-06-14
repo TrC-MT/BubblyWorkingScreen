@@ -11,6 +11,7 @@ button{
     background-color: #1623DB;
     color: #DBB216;
     width:fit-content;
+    font-size: 1vw;
 }
 #audioControl{
     transition: 1s;
@@ -30,7 +31,7 @@ header{
 }
 h1{
     margin-left: .5%;
-    font-size: 3em;
+    font-size: 3vw;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #DB1816;
 }
@@ -48,6 +49,7 @@ h4{
     margin: 0px;
     color: #9C1210;
     font-family:'Courier New', Courier, monospace;
+    font-size: 1.5vw;
 }
 input{
     width: 15%;
@@ -68,7 +70,7 @@ main{
 }
 marquee{
     color: lawngreen;
-    font-size: 7em;
+    font-size: 7vw;
     font-weight: bolder;
     text-shadow: 7px 5px 20px #0f0f0f;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
