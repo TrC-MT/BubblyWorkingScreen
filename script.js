@@ -82,12 +82,11 @@ function Change(){
         if(num_of_behaviors%2 == 0){
             document.getElementById(`${i}`).setAttribute('behavior', 'scroll')
             let way = Math.ceil(Math.random() * 2 + 1)
-            console.log('way ', way)
             if(way % 2 == 0){
-             document.getElementById(`${i}`).setAttribute('direction', 'right')
+             document.getElementById(`${i}`).setAttribute('direction', 'right') //This makes the marquee scroll to the right.
             }
             else{
-            document.getElementById(`${i}`).setAttribute('direction', 'left')
+            document.getElementById(`${i}`).setAttribute('direction', 'left') //This makes the marquee scroll to the left.
             }
         }
         else{
