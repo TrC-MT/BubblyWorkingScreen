@@ -1,4 +1,3 @@
-
 window.setTimeout(
     function(){
         Interval()
@@ -82,6 +81,14 @@ function Change(){
         //___
         if(num_of_behaviors%2 == 0){
             document.getElementById(`${i}`).setAttribute('behavior', 'scroll')
+            let way = Math.ceil(Math.random() * 2 + 1)
+            console.log('way ', way)
+            if(way % 2 == 0){
+             document.getElementById(`${i}`).setAttribute('direction', 'right')
+            }
+            else{
+            document.getElementById(`${i}`).setAttribute('direction', 'left')
+            }
         }
         else{
             document.getElementById(`${i}`).setAttribute('behavior', 'alternate')
