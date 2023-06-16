@@ -11,7 +11,7 @@
 <body>
     <button id="On" onclick="Collapse()">Show Menu</button>
     <header>
-        <h1>Bubbly Working Screen</h1> <!--I say bubbly because of how the marquees appear to float around like bubbles.-->
+        <h1>Bubbly Working Screen</h1> <!--I say bubbly because of how the h2s appear to float around like bubbles.-->
         <button onclick="Collapse()">Hide Menu</button>
         <button id="audioControl" onclick="AudioControl()">Play music</button>
         <audio src="Copy of Tsong1.wav" loop></audio>
@@ -21,16 +21,16 @@
                 <h4>MinInterval (s)</h4>
                 <h4>MaxSize (vw)</h4>
                 <h4>MinSize (vw)</h4>
-                <h4>MaxSpeed</h4>
-                <h4>MinSpeed</h4>
+                <h4>SlowestSpeed (s)</h4>
+                <h4>FastestSpeed (s)</h4>
             </div>
             <div class="inputs">
                 <input id="MaxIntervalInput" type="text" value="50">
                 <input id="MinIntervalInput" type="text" value="30">
-                <input id="MaxSizeInput" type="text" value="12">
-                <input id="MinSizeInput" type="text" value="5">
-                <input id="MaxScrollAmount" type="text" value="80">
-                <input id="MinScrollAmount" type="text" value="18">
+                <input id="MaxSizeInput" type="text" value="5">
+                <input id="MinSizeInput" type="text" value="2">
+                <input id="SlowestSpeed" type="text" value="10">
+                <input id="FastestSpeed" type="text" value="2">
             </div>
             <div class="instructions" id="secondInstructions">
                 <h4 class="secondHeading">ChanceOfRotation (%)</h4>
@@ -53,10 +53,10 @@
         </div>
     </header>
     <main>
-        <marquee id="1" behavior="alternate" direction="right" scrollAmount="20">Working...</marquee> <!--I learned that the marquee tag is depreciated after creating this. I still find it fun though.-->
-        <marquee id="2" behavior="alternate" direction="left" scrollAmount="30">Working...</marquee>
-        <marquee id="3" behavior="alternate" direction="right" scrollAmount="40">Working...</marquee>
-        <marquee id="4" behavior="alternate" direction="left" scrollAmount="50">Working...</marquee>
+        <h2 id="m-1" class="Not-marquee">Working...</h2>
+        <h2 id="m-2" class="Not-marquee">Working...</h2>
+        <h2 id="m-3" class="Not-marquee">Working...</h2>
+        <h2 id="m-4" class="Not-marquee">Working...</h2>
     </main>
 </body>
 </html>

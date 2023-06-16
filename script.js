@@ -53,44 +53,44 @@ function BehaviorSwitch(){
     num_of_behaviors += 1
 }
 function Change(){
-    for(let i = 1; i < document.getElementsByTagName('marquee').length +1; i++){
+    for(let i = 1; i < document.getElementsByClassName('Not-marquee').length +1; i++){
         const red = getRandomColorNumber();
         const green = getRandomColorNumber();
         const blue = getRandomColorNumber();
         const Color = `rgb(${red}, ${green}, ${blue})`
-        document.getElementById(`${i}`).style.color = Color
+        document.getElementById(`m-${i}`).style.color = Color
         //___________________________
-        const max_scrollamount = Number(document.getElementById('MaxScrollAmount').value)
-        const min_scrollamount = Number(document.getElementById('MinScrollAmount').value)
-        var ScrollAmount = Math.random() * (max_scrollamount - min_scrollamount) + min_scrollamount; //This is the speed at which the marquee goes across the page
-        document.getElementById(`${i}`).setAttribute('scrollamount', ScrollAmount)
+        const max_speed = Number(document.getElementById('SlowestSpeed').value)
+        const min_speed = Number(document.getElementById('FastestSpeed').value)
+        var speed = Math.random() * (max_speed - min_speed) + min_speed; //This is the speed at which the Not-marquee goes across the page
+        document.getElementById(`m-${i}`).style.animationDuration = `${speed}s`;
         //______________________________
         const max_size = Number(document.getElementById('MaxSizeInput').value)
         const min_size = Number(document.getElementById('MinSizeInput').value)
         var FS = Math.random() * (max_size - min_size) + min_size
-        document.getElementById(`${i}`).style.fontSize = String(FS) + 'vw';
+        document.getElementById(`m-${i}`).style.fontSize = String(FS) + 'vw';
         //________________________________
         if(num_of_toggle_shadows %2 == 0){
-            document.getElementById(`${i}`).style.textShadow = `7px 5px 20px rgb(${green}, ${blue}, ${red})` //Yes, the red, green, and blue are mixed up.
+            document.getElementById(`m-${i}`).style.textShadow = `7px 5px 20px rgb(${green}, ${blue}, ${red})` //Yes, the red, green, and blue are mixed up.
         }
         else{
-            document.getElementById(`${i}`).style.textShadow = `none`
+            document.getElementById(`m-${i}`).style.textShadow = `none`
         }
         //___________________________________
-        document.getElementById(`${i}`).innerHTML = String(document.getElementById('TextInput').value)
+        document.getElementById(`m-${i}`).innerHTML = String(document.getElementById('TextInput').value)
         //___
         if(num_of_behaviors%2 == 0){
-            document.getElementById(`${i}`).setAttribute('behavior', 'scroll')
+            document.getElementById(`m-${i}`).style.animationName = 'Move_scroll';
             let way = Math.ceil(Math.random() * 2 + 1)
             if(way % 2 == 0){
-             document.getElementById(`${i}`).setAttribute('direction', 'right') //This makes the marquee scroll to the right.
+             document.getElementById(`m-${i}`).style.animationDirection = 'normal'; //This makes the Not-marquee scroll to the right.
             }
             else{
-            document.getElementById(`${i}`).setAttribute('direction', 'left') //This makes the marquee scroll to the left.
+            document.getElementById(`m-${i}`).style.animationDirection = 'reverse'; //This makes the Not-marquee scroll to the left.
             }
         }
         else{
-            document.getElementById(`${i}`).setAttribute('behavior', 'alternate')
+            document.getElementById(`m-${i}`).style.animationName = 'Move_alternate';
         }
     }
 }
@@ -99,23 +99,24 @@ function Flipper(){
     // const chance = (4/max) * 100
     // const max = 4/(chance/100)
     const chance = Number(document.getElementById('ChanceOfFlipping').value)
-    const max_flip = (4/(chance/100)) //4 is the number of marquees
+    const max_flip = (4/(chance/100)) //4 is the number of Not-marquees
     let dec_Selected = Math.random() * (max_flip - 1) + 1 //10max = 40%chance, 20max = 20%chance,
     let selected = Math.floor(dec_Selected)
     if(selected >= 5){
         makeBackgroundDifferentColor()
     }
     else{
-        document.getElementById(`${selected}`).style.transform = 'rotateX(0deg)' //This makes the text appear right side up
+        document.getElementById(`m-${selected}`).style.transform = 'rotateX(0deg)' //This makes the text appear right side up
         setTimeout(FlipStart, 1000, selected) //Run the function FlipStart, after 1000 milliseconds (1 second), with the parameter selected passed in
     }
 }
 function FlipStart(selected){
-    document.getElementById(`${selected}`).style.transform = 'rotateX(180deg)' //This makes the text appear upsidedown
-    setTimeout(FlipEnd, 1000, selected)
+    console.log('Flipping ', selected)
+    document.getElementById(`m-${selected}`).style.transform = 'rotateX(180deg)' //This makes the text appear upsidedown
+    setTimeout(FlipEnd, 2000, selected)
 }
 function FlipEnd(selected){
-    document.getElementById(`${selected}`).style.transform = 'rotateX(360deg)' //This flips the text back to right side up
+    document.getElementById(`m-${selected}`).style.transform = 'rotateX(360deg)' //This flips the text back to right side up
 }
 //--------------------------
 
