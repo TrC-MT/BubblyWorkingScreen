@@ -90,6 +90,17 @@ main{
     100%{transform: translateX(105%);}
 }
 
+@keyframes Flip_alternate {
+    0%{transform: translateX(0%) rotateX(0deg);}
+    50%{transform: translateX(98%) rotateX(180deg);}
+    100%{transform: rotateX(360deg);}
+}
+
+@keyframes Flip_scroll {
+    0%{transform: translateX(-5%) rotateX(0deg);}
+    50%{transform: rotateX(180deg);}
+    100%{transform: translateX(105%) rotateX(360deg);}
+}
 /*--------------------*/
 
 audio{

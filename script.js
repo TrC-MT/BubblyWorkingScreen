@@ -95,6 +95,16 @@ function Change(){
     }
 }
 
+/*
+
+          NOTE TO SELF
+    Flipper isn't working completely right.
+    I think the transform = rotate    is being messed with the animation
+    Try making an animation for flipping and scrolling, and flipping and alternating.
+    When in reverse alternating, it might flip backwards. I think I'm ok with that though.
+
+*/
+
 function Flipper(){
     // const chance = (4/max) * 100
     // const max = 4/(chance/100)
@@ -111,12 +121,31 @@ function Flipper(){
     }
 }
 function FlipStart(selected){
-    console.log('Flipping ', selected)
-    document.getElementById(`m-${selected}`).style.transform = 'rotateX(180deg)' //This makes the text appear upsidedown
-    setTimeout(FlipEnd, 2000, selected)
+    let selected_behaviour = document.getElementById(`m-${selected}`).style.animationName;
+    if(selected_behaviour == 'Move_scroll'){
+        document.getElementById(`m-${selected}`).style.animationName = 'Flip_scroll' //This makes the Not-marquee switch to a different animation that includes flipping
+    }
+    else if(selected_behaviour == 'Move_alternate'){
+        document.getElementById(`m-${selected}`).style.animationName = 'Flip_alternate' //This makes the Not-marquee switch to a different animation that includes flipping
+    }
+    else{
+        console.log('selected_behaviour malfunctioned. ', selected_behaviour)
+    }
+    let duration_s = document.getElementById(`m-${selected}`).style.animationDuration; // animationDuration is a string of numbers with an s at the end.
+    let duration_m = duration_s.slice(0, -1); // Return the string without the last character.
+    let duration = Number(duration_m) * 1000; // Make duration_m into a number, then multiply by a thousand because setTimeout is in milliseconds.
+    setTimeout(FlipEnd, duration, {selected, selected_behaviour}) //This makes the flipping animation last only as long as the animation-duration for the selected Not-marquee  STILL A PROBLEM HERE
 }
-function FlipEnd(selected){
-    document.getElementById(`m-${selected}`).style.transform = 'rotateX(360deg)' //This flips the text back to right side up
+function FlipEnd(selectedObj){
+    if(selectedObj.selected_behaviour == 'Move_scroll'){
+        document.getElementById(`m-${selectedObj.selected}`).style.animationName = 'Move_scroll' //This makes the Not-marquee switch back to the animation without flipping
+    }
+    else if(selectedObj.selected_behaviour == 'Move_alternate'){
+        document.getElementById(`m-${selectedObj.selected}`).style.animationName = 'Move_alternate' //This makes the Not-marquee switch back to the animation without flipping
+    }
+    else{
+        console.log('selected_behaviour malfunctioned. ', selected_behaviour)
+    }
 }
 //--------------------------
 
