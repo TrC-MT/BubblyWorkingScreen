@@ -22,42 +22,35 @@
                 <h4>Min Interval (s)</h4>
                 <h4>Max Size (vw)</h4>
                 <h4>Min Size (vw)</h4>
-                <h4>Slowest Speed (s)</h4>
-                <h4>Fastest Speed (s)</h4>
+                <h4>Slowest Speed</h4>
+                <h4>Fastest Speed</h4>
             </div>
             <div class="inputs">
                 <input id="MaxIntervalInput" type="text" value="50">
                 <input id="MinIntervalInput" type="text" value="30">
                 <input id="MaxSizeInput" type="text" value="5">
                 <input id="MinSizeInput" type="text" value="2">
-                <input id="SlowestSpeed" type="text" value="10">
-                <input id="FastestSpeed" type="text" value="2">
+                <input id="SlowestSpeed" type="text" value="100">
+                <input id="FastestSpeed" type="text" value="20">
             </div>
             <div class="instructions" id="secondInstructions">
-                <h4 class="secondHeading">Chance Of Rotation (%)</h4>
                 <h4 class="secondHeading" id="ShadowHeading">Shadow (Off/On)</h4>
                 <h4 class="secondHeading">Text</h4>
-                <h4 class="secondHeading" id="behaviorHeading">Behavior (altr/scrl)</h4>
             </div>
             <div class="inputs">
-                <input id="ChanceOfFlipping" type="text" value="30">
                 <label class="switch">
                     <input onclick="ToggleShadow()" type="checkbox">
                     <span class="slider"></span>
                 </label>
-                <input type="text" id="TextInput" value="Working...">
-                <label class="switch">
-                    <input onclick="BehaviorSwitch()" type="checkbox">
-                    <span class="slider"></span>
-                </label>
+                <input type="text" id="TextInput" value="O">
             </div>
         </div>
     </header>
     <main>
-        <h2 id="m-1" class="Not-marquee">Working...</h2>
-        <h2 id="m-2" class="Not-marquee">Working...</h2>
-        <h2 id="m-3" class="Not-marquee">Working...</h2>
-        <h2 id="m-4" class="Not-marquee">Working...</h2>
+        <p id="b-1" class="bubble">1</p>
+        <p id="b-2" class="bubble">2</p>
+        <p id="b-3" class="bubble">3</p>
+        <p id="b-4" class="bubble">4</p>
     </main>
 </body>
 </html>

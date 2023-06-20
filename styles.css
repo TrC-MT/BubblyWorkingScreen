@@ -75,37 +75,40 @@ main{
     width: 100%;
 }
 
-.Not-marquee{
-    color: lawngreen;
-    font-size: 4vw;
-    font-weight: bolder;
-    text-shadow: 7px 5px 20px #0f0f0f;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    animation: Move_alternate 8s linear 0s infinite normal none;
+.bubble{
+    transition: 0s;
+    width: fit-content;
+    position: absolute;
+    /* min_left: -.2%; max_left: 98.8%; */
+    /* min_top: 11.3%; max_top: 95.85%; */
+    background-color: black;
+    color: white;
+}
+#b-1{
+    left: 3%;
+    top: 15%;
+}
+#b-2{
+    left: 37%;
+    top: 32%;
+}
+#b-3{
+    left: 13%;
+    top: 92%;
+}
+#b-4{
+    left: 80%;
+    top: 32%;
 }
 
 /*-------------------------*/
-@keyframes Move_alternate { /* This animation makes the element go from left to right, and back again. */
-    0%{transform: translateX(0%);} /* This makes the element be as far left as it normally would be. */
-    50%{transform: translateX(98%);} /* This makes the element be 98 percent to the right of where it would be. */
-}
 
-@keyframes Move_scroll { /* This animation makes the element go out the left of its normal position, then out the right its normal position. */
-    0%{transform: translateX(-5%);} /* This makes the element be 5 percent to the left of where it normally would be. */
-    100%{transform: translateX(105%);} /* This makes the element be 105 percent to the right of where it would be. */
-}
-
-@keyframes Flip_alternate { /* This animation makes the element go from left to right, and back again, as well as flip upsidedown and back again. */
-    0%{transform: translateX(0%) rotateX(0deg);}
-    50%{transform: translateX(98%) rotateX(180deg);}
+@keyframes Flip { /* This animation makes the element flip upsidedown and back again. */
+    0%{transform: rotateX(0deg);}
+    50%{transform: rotateX(180deg);}
     100%{transform: rotateX(360deg);}
 }
 
-@keyframes Flip_scroll { /* This animation makes the element go out the left of its normal position, then out the right its normal position, as well as flip upsidedown and back again. */
-    0%{transform: translateX(-5%) rotateX(0deg);}
-    50%{transform: rotateX(180deg);}
-    100%{transform: translateX(105%) rotateX(360deg);}
-}
 /*--------------------*/
 
 audio{
