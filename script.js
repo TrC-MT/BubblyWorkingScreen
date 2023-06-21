@@ -74,10 +74,34 @@ function AudioControl(){
 let bubblify_count = 0;
 function bubblify(){
     for(let i = 1; i <= document.getElementsByClassName('bubble').length; i++){
-        let x = Number(document.getElementById(`b-${i}`).style.left);
-        let y = Number(document.getElementById(`b-${i}`).style.top);
+        let x_s = document.getElementById(`b-${i}`).style.left;
+        console.log('x_s ', x_s, " i ", i)
+        console.log(x_s) //Outputs nothing????
+        console.log('^')
+        let x = Number(x_s.slice(0, -1)); // Return the string without the last character (In this case a %), then turn it into a number
+        let y_s = document.getElementById(`b-${i}`).style.top;
+        console.log('y_s ', y_s, " i ", i)
+        console.log(y_s) //Outputs nothing????
+        console.log('^')
+        let y = Number(y_s.slice(0, -1)); // Return the string without the last character (In this case a %), then turn it into a number
+        
+        let d = Math.random();
         let x_direction = 'right';
+        if(d >= .5){
+            x_direction = 'right';
+        }
+        else{
+            x_direction = 'left';
+        }
+
+        let d2 = Math.random();
         let y_direction = 'down';
+        if(d2 >= .5){
+            y_direction = 'down';
+        }
+        else{
+            y_direction = 'up';
+        }
         let p = {i: i, x: x, y: y, xd:  x_direction, yd: y_direction};
         console.log('p ', p)
         R(p);
@@ -105,14 +129,14 @@ function bubblify(){
         if(p.xd == 'right'){
             p.x += 1;
             document.getElementById(`b-${p.i}`).style.left = `${p.x}%`;
-            if(p.x == 97){
+            if(p.x >= 97){
                 p.xd = 'left';
             };
         }
         else if(p.xd == 'left'){
             p.x -= 1;
             document.getElementById(`b-${p.i}`).style.left = `${p.x}%`;
-            if(p.x == 0){
+            if(p.x <= 0){
                 p.xd = 'right';
             };
         };
@@ -121,14 +145,14 @@ function bubblify(){
         if(p.yd == 'down'){
             p.y += 1;
             document.getElementById(`b-${p.i}`).style.top = `${p.y}%`;
-            if(p.y == 88){
+            if(p.y >= 88){
                 p.yd = 'up';
             };
         }
         else if(p.yd == 'up'){
             p.y -= 1;
             document.getElementById(`b-${p.i}`).style.top = `${p.y}%`;
-            if(p.y == 8){
+            if(p.y <= 8){
                 p.yd = 'down';
             };
         };
@@ -169,101 +193,3 @@ function Flipper(){
         setTimeout(document.getElementById(`b-${selected}`).style.animationName = 'none', 5000);
     };
 }
-
-
-//============================================
-
-// var num_of_toggle_shadows = -1;
-// function ToggleShadow(){
-//     num_of_toggle_shadows += 1;
-// };
-
-// var num_of_behaviors = -1;
-// function BehaviorSwitch(){
-//     num_of_behaviors += 1;
-// };
-
-// function Change(){
-//     for(let i = 1; i < document.getElementsByClassName('Not-marquee').length +1; i++){
-//         const red = getRandomColorNumber();
-//         const green = getRandomColorNumber();
-//         const blue = getRandomColorNumber();
-//         const Color = `rgb(${red}, ${green}, ${blue})`;
-//         document.getElementById(`m-${i}`).style.color = Color;
-//         //___________________________
-//         const max_speed = Number(document.getElementById('SlowestSpeed').value);
-//         const min_speed = Number(document.getElementById('FastestSpeed').value);
-//         var speed = Math.random() * (max_speed - min_speed) + min_speed; //This is the duration it takes for the Not-marquee to go across the page
-//         document.getElementById(`m-${i}`).style.animationDuration = `${speed}s`;
-//         //______________________________
-//         const max_size = Number(document.getElementById('MaxSizeInput').value);
-//         const min_size = Number(document.getElementById('MinSizeInput').value);
-//         var FS = Math.random() * (max_size - min_size) + min_size;
-//         document.getElementById(`m-${i}`).style.fontSize = String(FS) + 'vw';
-//         //________________________________
-//         if(num_of_toggle_shadows %2 == 0){
-//             document.getElementById(`m-${i}`).style.textShadow = `7px 5px 20px rgb(${green}, ${blue}, ${red})`; //Yes, the red, green, and blue are mixed up.
-//         }
-//         else{
-//             document.getElementById(`m-${i}`).style.textShadow = `none`;
-//         };
-//         //___________________________________
-//         document.getElementById(`m-${i}`).innerHTML = String(document.getElementById('TextInput').value);
-//         //___
-//         if(num_of_behaviors%2 == 0){
-//             document.getElementById(`m-${i}`).style.animationName = 'Move_scroll';
-//             let way = Math.ceil(Math.random() * 2 + 1);
-//             if(way % 2 == 0){
-//              document.getElementById(`m-${i}`).style.animationDirection = 'normal'; //This makes the Not-marquee scroll to the right.
-//             }
-//             else{
-//             document.getElementById(`m-${i}`).style.animationDirection = 'reverse'; //This makes the Not-marquee scroll to the left.
-//             };
-//         }
-//         else{
-//             document.getElementById(`m-${i}`).style.animationName = 'Move_alternate';
-//         };
-//     };
-// };
-
-// function Flipper(){
-//     const chance = Number(document.getElementById('ChanceOfFlipping').value);
-//     const max_flip = (4/(chance/100)); //4 is the number of Not-marquees
-//     let dec_Selected = Math.random() * (max_flip - 1) + 1; //10max = 40%chance, 20max = 20%chance,
-//     let selected = Math.floor(dec_Selected);
-//     if(selected >= 5){
-//         makeBackgroundDifferentColor();
-//     }
-//     else{
-//         document.getElementById(`m-${selected}`).style.transform = 'rotateX(0deg)' //This makes the text appear right side up
-//         setTimeout(FlipStart, 1000, selected) //Run the function FlipStart, after 1000 milliseconds (1 second), with the parameter selected passed in
-//     };
-// };
-// function FlipStart(selected){
-//     let selected_behaviour = document.getElementById(`m-${selected}`).style.animationName;
-//     if(selected_behaviour == 'Move_scroll'){
-//         document.getElementById(`m-${selected}`).style.animationName = 'Flip_scroll'; //This makes the Not-marquee switch to a different animation that includes flipping
-//     }
-//     else if(selected_behaviour == 'Move_alternate'){
-//         document.getElementById(`m-${selected}`).style.animationName = 'Flip_alternate'; //This makes the Not-marquee switch to a different animation that includes flipping
-//     }
-//     else{
-//         console.log('selected_behaviour malfunctioned. ', selected_behaviour);
-//     };
-//     let duration_s = document.getElementById(`m-${selected}`).style.animationDuration; // animationDuration is a string of numbers with an s at the end.
-//     let duration_m = duration_s.slice(0, -1); // Return the string without the last character.
-//     let duration = Number(duration_m) * 1000; // Make duration_m into a number, then multiply by a thousand because setTimeout is in milliseconds.
-//     setTimeout(FlipEnd, duration, {selected, selected_behaviour}); //This makes the flipping animation last only as long as the animation-duration for the selected Not-marquee  STILL A PROBLEM HERE
-// };
-// function FlipEnd(selectedObj){
-//     if(selectedObj.selected_behaviour == 'Move_scroll'){
-//         document.getElementById(`m-${selectedObj.selected}`).style.animationName = 'Move_scroll'; //This makes the Not-marquee switch back to the animation without flipping
-//     }
-//     else if(selectedObj.selected_behaviour == 'Move_alternate'){
-//         document.getElementById(`m-${selectedObj.selected}`).style.animationName = 'Move_alternate'; //This makes the Not-marquee switch back to the animation without flipping
-//     }
-//     else{
-//         console.log('selected_behaviour malfunctioned. ', selected_behaviour)
-//     };
-// };
-//--------------------------
