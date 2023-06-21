@@ -20,37 +20,33 @@
             <div class="instructions">
                 <h4>Max Interval (s)</h4>
                 <h4>Min Interval (s)</h4>
-                <h4>Max Size (vw)</h4>
+                <!-- <h4>Max Size (vw)</h4>
                 <h4>Min Size (vw)</h4>
                 <h4>Slowest Speed</h4>
-                <h4>Fastest Speed</h4>
+                <h4>Fastest Speed</h4> -->
+                <h4 id="ShadowHeading">Shadow (Off/On)</h4>
+                <h4 >Chance Of Rotation (%)</h4>
             </div>
             <div class="inputs">
                 <input id="MaxIntervalInput" type="text" value="50">
                 <input id="MinIntervalInput" type="text" value="30">
-                <input id="MaxSizeInput" type="text" value="5">
+                <!-- <input id="MaxSizeInput" type="text" value="5">
                 <input id="MinSizeInput" type="text" value="2">
                 <input id="SlowestSpeed" type="text" value="100">
-                <input id="FastestSpeed" type="text" value="20">
-            </div>
-            <div class="instructions" id="secondInstructions">
-                <h4 class="secondHeading" id="ShadowHeading">Shadow (Off/On)</h4>
-                <h4 class="secondHeading">Text</h4>
-            </div>
-            <div class="inputs">
+                <input id="FastestSpeed" type="text" value="20"> -->
                 <label class="switch">
                     <input onclick="ToggleShadow()" type="checkbox">
                     <span class="slider"></span>
                 </label>
-                <input type="text" id="TextInput" value="O">
+                <input id="ChanceOfFlipping" type="text" value="30">
             </div>
         </div>
     </header>
     <main>
-        <p id="b-1" class="bubble">1</p>
-        <p id="b-2" class="bubble">2</p>
-        <p id="b-3" class="bubble">3</p>
-        <p id="b-4" class="bubble">4</p>
+        <p id="b-1" class="bubble">O.</p>
+        <p id="b-2" class="bubble">O.</p>
+        <p id="b-3" class="bubble">O.</p>
+        <p id="b-4" class="bubble">O.</p>
     </main>
 </body>
 </html>

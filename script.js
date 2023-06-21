@@ -9,14 +9,14 @@ function Interval(){
     const min_interval = Number(document.getElementById('MinIntervalInput').value) * 1000;
     var DecInterval = Math.random() * (max_interval - min_interval) + min_interval;
     var interval = Math.floor(DecInterval);
-    // setInterval(Change, interval);
+    setInterval(Change, interval);
     setInterval(makeBackgroundDifferentColor, interval/2);
-    // setInterval(Flipper, interval * 2);
+    setInterval(Flipper, interval * 2);
     setInterval(bubblify, interval)
     var intervalToChange = (max_interval + min_interval + interval) * 1.5;
     setTimeout(Interval, intervalToChange);
 };
-
+//----------------------
 function getRandomColorNumber() {
     return Math.random() * 255;
 };
@@ -105,7 +105,7 @@ function bubblify(){
         if(p.xd == 'right'){
             p.x += 1;
             document.getElementById(`b-${p.i}`).style.left = `${p.x}%`;
-            if(p.x == 98){
+            if(p.x == 97){
                 p.xd = 'left';
             };
         }
@@ -121,19 +121,55 @@ function bubblify(){
         if(p.yd == 'down'){
             p.y += 1;
             document.getElementById(`b-${p.i}`).style.top = `${p.y}%`;
-            if(p.y == 98){
+            if(p.y == 88){
                 p.yd = 'up';
             };
         }
         else if(p.yd == 'up'){
             p.y -= 1;
             document.getElementById(`b-${p.i}`).style.top = `${p.y}%`;
-            if(p.y == 12){
+            if(p.y == 8){
                 p.yd = 'down';
             };
         };
     };
 };
+//--------------------------------------
+var num_of_toggle_shadows = -1;
+function ToggleShadow(){
+    num_of_toggle_shadows += 1;
+};
+function Change(){
+    for(let i = 1; i <= document.getElementsByClassName('bubble').length; i++){
+        const red = getRandomColorNumber();
+        const green = getRandomColorNumber();
+        const blue = getRandomColorNumber();
+        const Color = `rgb(${red}, ${green}, ${blue})`;
+        document.getElementById(`b-${i}`).style.color = Color;
+        document.getElementById(`b-${i}`).style.backgroundColor = Color;
+        if(num_of_toggle_shadows %2 == 0){
+            document.getElementById(`b-${i}`).style.boxShadow = `0px 0px 20px 10px rgb(${green}, ${blue}, ${red})`; //Yes, the red, green, and blue are mixed up.
+        }
+        else{
+            document.getElementById(`b-${i}`).style.boxShadow = `none`;
+        };
+    }
+}
+//-------------------
+function Flipper(){
+    const chance = Number(document.getElementById('ChanceOfFlipping').value);
+    const max_flip = (document.getElementsByClassName('bubble').length/(chance/100));
+    let dec_Selected = Math.random() * (max_flip - 1) + 1; //10max = 40%chance, 20max = 20%chance,
+    let selected = Math.floor(dec_Selected);
+    if(selected >= document.getElementsByClassName('bubble').length){
+        makeBackgroundDifferentColor();
+    }
+    else{
+        document.getElementById(`b-${selected}`).style.animationName = 'Flip';
+        setTimeout(document.getElementById(`b-${selected}`).style.animationName = 'none', 5000);
+    };
+}
+
 
 //============================================
 
