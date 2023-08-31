@@ -9,10 +9,10 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <noscript>This page require JavaScript to work. Please enable JavaScript to continue.</noscript>
+    <noscript>This page requires JavaScript to work. Please enable JavaScript to continue.</noscript>
     <button id="On" onclick="Collapse()">Show Menu</button>
     <header>
-        <h1>Bubbly Working Screen</h1> <!--I say bubbly because of how the h2s appear to float around like bubbles.-->
+        <h1>Bubbly Screen</h1>
         <button onclick="Collapse()">Hide Menu</button>
         <button id="audioControl" onclick="AudioControl()">Play music</button>
         <audio src="Copy of Tsong1.wav" loop></audio>
@@ -26,6 +26,7 @@
                 <h4>Fastest Speed</h4> -->
                 <h4 id="ShadowHeading">Shadow (Off/On)</h4>
                 <h4 >Chance Of Rotation (%)</h4>
+                <h4>Max Bubbles (4 to 100)</h4>
             </div>
             <div class="inputs">
                 <input id="MaxIntervalInput" type="text" value="50">
@@ -39,14 +40,17 @@
                     <span class="slider"></span>
                 </label>
                 <input id="ChanceOfFlipping" type="text" value="30">
+                <input id="maxBubbles" type="text" value="100">
+                <span id="mb-message">Loading, please wait.</span>
             </div>
         </div>
     </header>
     <main>
-        <p id="b-1" class="bubble">O.</p>
+        <!-- <p id="b-1" class="bubble">O.</p>
         <p id="b-2" class="bubble">O.</p>
         <p id="b-3" class="bubble">O.</p>
-        <p id="b-4" class="bubble">O.</p>
+        <p id="b-4" class="bubble">O.</p> -->
+        <span id="begin-message">Loading, please wait.</span>
     </main>
 </body>
 </html>

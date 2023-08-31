@@ -7,6 +7,14 @@ body{
     width: 100%;
 }
 
+#begin-message{
+    color: white;
+    font-size: 8vw;
+}
+#mb-message{
+    font-size: 1.2vw;
+}
+
 button{
     background-color: #1623DB;
     color: #DBB216;
@@ -62,6 +70,9 @@ input{
     background-color: #DBB216;
     border-color: #1623DB;
 }
+#maxBubbles{
+    display: none;
+}
 
 #secondInstructions{
     justify-content: space-around;
@@ -88,7 +99,7 @@ main{
     font-size: 3vw;
     /* box-shadow: 0px 0px 20px 10px rgb(255, 255, 255); */
 }
-#b-1{
+/* #b-1{
     left: 3%;
     top: 15%;
 }
@@ -103,9 +114,13 @@ main{
 #b-4{
     left: 90%;
     top: 32%;
-}
+} */
 
 /*-------------------------*/
+
+@keyframes none {
+    /* This is just so I don't get the reference error. I would have thought that animation: none; would imply no animation. */
+}
 
 @keyframes Flip { /* This animation makes the element flip upsidedown and back again. */
     0%{transform: rotateX(0deg);}
